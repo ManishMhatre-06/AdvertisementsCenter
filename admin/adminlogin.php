@@ -28,6 +28,7 @@
     $sql = "SELECT * FROM admin_table WHERE admin_emailid = '$admin_emailid'";
     $result = $conn->query($sql);
     
+
     // Check if a row exists
     if ($result->num_rows > 0) {
         // Fetch the row
@@ -40,7 +41,7 @@
             // Successful login
             session_start();
             $_SESSION['admin_id'] = $row['admin_id']; // Store admin ID in session
-            //header("Location: admin_dashboard.php"); // Redirect to dashboard
+            header("Location: http://127.0.0.1:5500/index.html"); // Redirect to dashboard
             exit();
         } else {
             // Incorrect password
