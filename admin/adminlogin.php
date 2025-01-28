@@ -39,7 +39,7 @@
             // Successful login
             session_start();
             $_SESSION['admin_id'] = $row['admin_id']; // Store admin ID in session
-            header("Location: http://127.0.0.1:5500/index.html"); // Redirect to dashboard
+            //header("Location: admin_dashboard.php"); // Redirect to dashboard
             exit();
         } else {
             // Incorrect password
