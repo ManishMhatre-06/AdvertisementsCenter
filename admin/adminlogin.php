@@ -42,11 +42,9 @@
             //header("Location: admin_dashboard.php"); // Redirect to dashboard
             exit();
         } else {
-            // Incorrect password
             echo "Incorrect password.";
         }
     } else {
-        // User not found
         echo "User not found.";
     }
     
