@@ -23,12 +23,11 @@
     $admin_emailid = $_POST['admin_emailid'];
     $admin_password = $_POST['admin_password'];
 
-    echo "{$admin_emailid} and {$admin_password}";
+    echo "{$admin_emailid} and {$admin_password}<br>";
 
     $sql = "SELECT * FROM admin_table WHERE admin_emailid = '$admin_emailid'";
     $result = $conn->query($sql);
     
-
     // Check if a row exists
     if ($result->num_rows > 0) {
         // Fetch the row
@@ -36,7 +35,6 @@
     
         // Verify password (replace with secure password hashing method)
         if ($admin_password === $row['admin_password']) {
-            
             
             // Successful login
             session_start();
