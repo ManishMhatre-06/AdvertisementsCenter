@@ -4,19 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Register</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js">
+        let initSqlJsPromise = initSqlJs({
+        locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${file}`
+    });
+    </script>
+
+    <!-- <header id="header"></header> -->
+
+    <h2>Admin Registration Form</h2>
     <div class="register-container">
-        <h2>Admin Register</h2>
-        <form action="admincontrolpanel.html" method="POST">
-            <input type="text" placeholder="Full Name" required>
-            <input type="text" placeholder="Username" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit">Register</button>
+        <form id="adminRegisterForm" method="POST">
+            <input type="text" id="admin_name" placeholder="Username" required>
+            <input type="email" id="admin_emailid" placeholder="Email" required>
+            <input type="password" id="admin_password" placeholder="Password" required>
+            <input type="tel" id="admin_contactno" placeholder="Contact No." required>
+            <button class="adminbtn" type="submit">Register</button>
         </form>
-        <p>Already registered? <a href="adminlogin.html">Login here</a></p>
     </div>
+    <p>Already registered? <a href="adminlogin.html">Login here</a></p>
+
+    <!-- <footer id="footer"></footer>
+    
+    <script>
+        fetch('../header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+        fetch('../footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script> -->
+
+    <script src="./admin.js"></script>
 </body>
 </html>

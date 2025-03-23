@@ -126,13 +126,14 @@ a {
   font-weight: bold;
 }
 
+/*#Admin Page CSS*/
 /* Adminlogin Page */
 
 h2 {
   margin-left: 35%;
 }
 
-.login-container {
+.login-container, .register-container {
   width: 350px;
   background: rgba(255, 255, 255, 0.1);
   padding: 25px;
@@ -220,9 +221,51 @@ p {
 }
 /* admincontrolpanel */
 
+#adminPageBody {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  height: 100vh;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.sidebar a:hover {
+  background-color: #ddd;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.table-container {
+  display: none;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;
+    margin-top: 20px;
 }
 
 th, td {
@@ -234,16 +277,3 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
-
-
-
-/* .button {
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-} */
