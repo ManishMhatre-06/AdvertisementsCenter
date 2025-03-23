@@ -1,21 +1,14 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Control Panel</title>
-    <link rel="stylesheet" href="../style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+    
 </head>
 <body>
     <div class="admin-panel">
-        <h2>Welcome, Admin!</h2>
 
-        <button onclick="logout()">Logout</button>
-    </div>
-
-    <h1>Database Data</h1>
-        <div id="dataDisplay">
+        <h1>Database Data</h1>
+        
+        <div id="displayAdminData">
             <table>
                 <thead>
                     <tr>
@@ -26,7 +19,164 @@
                 <tbody></tbody>
             </table>
         </div>
+    </div>
+        <button onclick="logout()">Logout</button>
         <script src="./admin.js"></script>
-    
+        
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Control Panel</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            height: 100vh;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .table-container {
+            display: none; /* Initially hide all tables */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="#" onclick="showTable('admin_list')">Admins</a></li>
+            <li><a href="#" onclick="showTable('banner')">Banner</a></li>
+            <li><a href="#" onclick="showTable('orders')">Orders</a></li>
+            <li><a href="#" onclick="showTable('categories')">Categories</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+
+        <div id="admin_list" class="table-container">
+            <h2>Welcome, Admin!</h2>
+            <div id="displayAdminData">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Admin ID</th><th>Admin Name</th><th>Password</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="banner" class="table-container">
+            <h2>Available Banners</h2>
+            <div id="displayBannerData">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Banner ID</th><th>Owner ID</th><th>Banner Image</th><th>Banner Area</th><th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="orders" class="table-container">
+            <h2>Orders</h2>
+            <table>
+                <thead>
+                    <tr><th>ID</th><th>User ID</th><th>Product ID</th><th>Quantity</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1001</td><td>1</td><td>101</td><td>1</td></tr>
+                    <tr><td>1002</td><td>2</td><td>102</td><td>2</td></tr>
+                    <tr><td>1003</td><td>3</td><td>103</td><td>3</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="categories" class="table-container">
+            <h2>Categories</h2>
+            <table>
+                <thead>
+                    <tr><th>ID</th><th>Name</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Electronics</td></tr>
+                    <tr><td>2</td><td>Clothing</td></tr>
+                    <tr><td>3</td><td>Books</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="./admin.js"></script>
+    <script>
+        function showTable(tableId) {
+            const tables = document.querySelectorAll('.table-container');
+            tables.forEach(table => {
+                table.style.display = 'none';
+            });
+            document.getElementById(tableId).style.display = 'block';
+        }
+    </script>
+
 </body>
 </html>
