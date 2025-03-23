@@ -70,7 +70,7 @@ async function displayBannerData() {
                 tableHTML += `<tr>
                 <td>${row[0]}</td>
                 <td>${row[1]}</td>
-                <td>${row[2]}</td>
+                <td><img class="adminPanelBannerImg" src=".${row[2]}" alt="Billboard"></td>
                 <td>${row[3]}</td>
                 <td>${row[4]}</td>
                 </tr>`;
@@ -133,7 +133,7 @@ async function displayOwnerData() {
     }
 }
 
-displaySalesData();
+displayOwnerData();
 
 /*displayOwnerData */
 async function displaySalesData() {
@@ -158,7 +158,6 @@ async function displaySalesData() {
                 tableHTML += `<tr>
                 <td>${row[0]}</td>
                 <td>${row[1]}</td>
-                <td>${row[2]}</td>
                 <td>${row[3]}</td>
                 <td>${row[4]}</td>
                 </tr>`;
@@ -177,7 +176,7 @@ async function displaySalesData() {
     }
 }
 
-displayOwnerData();
+displaySalesData();
 
 
 /*Adminlognin */

@@ -94,9 +94,10 @@ a {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px;
+  justify-content: center;
 }
 
 .grid-item {
@@ -276,4 +277,8 @@ th, td {
 
 th {
     background-color: #f2f2f2;
+}
+
+.adminPanelBannerImg{
+  width: 200px;
 }
