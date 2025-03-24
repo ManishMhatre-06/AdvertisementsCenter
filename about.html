@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheel" href="./style.css">
+    <title>About Us</title>
+</head>
+<body>
+    <header id="header"></header>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="./profileImg/dummyProfileImg.jpg" alt="profile Image">
+            <div class="profileName">Manish Mhatre</div>
+            <div class="educationInfo">B.E. in Computer Science amd Design</div>
+        </div>
+        <div class="grid-item">
+            <img src="./profileImg/dummyProfileImg.jpg" alt="profile Image">
+            <div class="profileName">Swagat Rajage</div>
+            <div class="educationInfo">B.E. in Computer Science amd Design</div>
+        </div>
+        <div class="grid-item">
+            <img src="./profileImg/dummyProfileImg.jpg" alt="profile Image">
+            <div class="profileName">Shravani Mangle</div>
+            <div class="educationInfo">B.E. in Computer Science amd Design</div>
+        </div>
+        <div class="grid-item">
+            <img src="./profileImg/dummyProfileImg.jpg" alt="profile Image">
+            <div class="profileName">Sneha Kale</div>
+            <div class="educationInfo">B.E. in Computer Science amd Design</div>
+        </div>
+    </div>
+    <footer id="footer"></footer>
+    
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
